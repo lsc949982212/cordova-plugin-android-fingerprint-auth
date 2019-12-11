@@ -17,6 +17,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical">
 
     <FrameLayout
@@ -49,12 +50,14 @@
             android:id="@+id/cancel_button"
             style="?android:attr/buttonBarNegativeButtonStyle"
             android:layout_width="wrap_content"
+            android:textColor="#456ee4"
             android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/second_dialog_button"
             style="?android:attr/buttonBarPositiveButtonStyle"
             android:layout_width="wrap_content"
+            android:textColor="#456ee4"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
