@@ -16,6 +16,7 @@
   -->
 <resources>
     <string name="cancel">取消</string>
+    <!--弹出指纹弹框以后可以不使用指纹解锁,使用锁屏密码解锁-->
     <string name="use_backup">使用备份</string>
     <string name="fingerprint_auth_dialog_title">指纹认证</string>
     <string name="ok">确定</string>
@@ -23,7 +24,9 @@
     <string name="fingerprint_hint">触控感应</string>
     <string name="fingerprint_not_recognized">指纹无法识别，请重试一次。</string>
     <string name="fingerprint_success">指纹识别成功</string>
+    <!--下面这个在代码中只定义了,没有用到-->
     <string name="new_fingerprint_enrolled_description">新的指纹资料加入此装置，需要您的密码。</string>
+    <!--当点击了使用备份,但是手机没有设置锁屏提示-->
     <string name="secure_lock_screen_required">需设定萤幕锁定</string>
     <string name="fingerprint_too_many_attempts">尝试次数过多，请稍后再试。</string>
 </resources>
