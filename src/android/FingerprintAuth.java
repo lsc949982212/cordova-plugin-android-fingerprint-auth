@@ -78,7 +78,9 @@ public class FingerprintAuth extends CordovaPlugin {
         ENCRYPT,
         DECRYPT,
         DELETE,
-        DISMISS
+        DISMISS,
+        USE_LUCK_SCREEN,
+        IS_LUCK_SCREEN_AVAILABLE
     }
 
     public enum PluginError {
@@ -214,6 +216,10 @@ public class FingerprintAuth extends CordovaPlugin {
             mAction = PluginAction.DELETE;
         } else if (action.equals("dismiss")) {
             mAction = PluginAction.DISMISS;
+        } else if (action.equals("useLuckScreen")) {
+            mAction = PluginAction.USE_LUCK_SCREEN;
+        } else if (action.equals("isLuckScreenAvailable")) {
+            mAction = PluginAction.IS_LUCK_SCREEN_AVAILABLE;
         }
 
         if (mAction != null) {
@@ -428,6 +434,32 @@ public class FingerprintAuth extends CordovaPlugin {
                         setPluginResultError(PluginError.FRAGMENT_NOT_EXIST.name());
                     }
                     return true;
+                case USE_LUCK_SCREEN:
+                    showAuthenticationScreen();
+                    Toast.makeText(getContext(),
+                            "调用了使用屏幕锁定",
+                            Toast.LENGTH_LONG).show();
+                    return true;
+                case IS_LUCK_SCREEN_AVAILABLE:
+                    Toast.makeText(getContext(),
+                            "调用了判断屏幕锁定是否可用",
+                            Toast.LENGTH_LONG).show();
+
+                    String errorMessage = null;
+                    JSONObject resultJson = new JSONObject();
+                    
+                    mPluginResult = new PluginResult(PluginResult.Status.OK);
+                    mCallbackContext.success(resultJson);
+                    mCallbackContext.sendPluginResult(mPluginResult);
+                    
+                    if (useBackupLockScreen() == true) {
+                        resultJson.put("isLuckScreen", true);
+                    } else {
+                        resultJson.put("isLuckScreen", false);
+                    }
+                    return true;
+                    
+
             }
         }
         return false;

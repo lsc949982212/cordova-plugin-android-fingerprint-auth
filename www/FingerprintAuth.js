@@ -77,5 +77,32 @@ FingerprintAuth.prototype.isAvailable = function (successCallback, errorCallback
     );
 };
 
+
+FingerprintAuth.prototype.useLuckScreen = function (successCallback, errorCallback) {
+    cordova.exec(
+        successCallback,
+        errorCallback,
+        "FingerprintAuth",  // Java Class
+        "useLuckScreen", // action
+        [{}]
+    );
+};
+
+
+FingerprintAuth.prototype.isLuckScreenAvailable = function (successCallback, errorCallback) {
+    cordova.exec(
+        successCallback,
+        errorCallback,
+        "FingerprintAuth",  // Java Class
+        "isLuckScreenAvailable", // action
+        [{}]
+    );
+};
+
+
+
+
+
+
 FingerprintAuth = new FingerprintAuth();
 module.exports = FingerprintAuth;
