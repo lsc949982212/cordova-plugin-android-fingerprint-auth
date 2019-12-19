@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-android-fingerprint-auth.FingerprintAuth", function(require, exports, module) {
 function FingerprintAuth() {
     FingerprintAuth.prototype.ERRORS = {
         BAD_PADDING_EXCEPTION: "BAD_PADDING_EXCEPTION",
@@ -99,6 +100,18 @@ FingerprintAuth.prototype.isLuckScreenAvailable = function (successCallback, err
     );
 };
 
+FingerprintAuth.prototype.authenticate = function (params,successCallback, errorCallback) {
+    cordova.exec(
+        successCallback,
+        errorCallback,
+        "FingerprintAuth",  // Java Class
+        "authenticate", // action
+        [params]
+    );
+};
+
+
+
 
 
 
@@ -106,3 +119,4 @@ FingerprintAuth.prototype.isLuckScreenAvailable = function (successCallback, err
 
 FingerprintAuth = new FingerprintAuth();
 module.exports = FingerprintAuth;
+});
