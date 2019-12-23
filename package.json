@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.bianjie.ai/rainbow-plugins/cordova-plugin-android-fingerprint-auth.git#develop"
+    "url": "git+github.com/mjwheatley/cordova-plugin-android-fingerprint-auth.git"
   },
   "keywords": [
     "cordova",
@@ -24,7 +24,7 @@
   "author": "Matthew Wheatley",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://gitlab.bianjie.ai/rainbow-plugins/cordova-plugin-android-fingerprint-auth/issues"
+    "url": "https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth/issues"
   },
-  "homepage": "https://gitlab.bianjie.ai/rainbow-plugins/cordova-plugin-android-fingerprint-auth#readme"
+  "homepage": "https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth#readme"
 }
